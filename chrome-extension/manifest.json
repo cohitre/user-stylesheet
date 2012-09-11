@@ -1,0 +1,13 @@
+{
+  "name": "Per-Domain User Stylesheets",
+  "version": "0.2",
+  "manifest_version": 2,
+  "description": "Adds a data attribute to the parent element so that it's easy to add per-domain styles as with the @document statement.",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["domain-add.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
