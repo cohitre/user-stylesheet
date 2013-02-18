@@ -3,6 +3,12 @@
   "version": "0.2",
   "manifest_version": 2,
   "description": "Adds a data attribute to the parent element so that it's easy to add per-domain styles as with the @document statement.",
+  "permissions": [
+    "bookmarks"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],

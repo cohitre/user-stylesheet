@@ -33,34 +33,91 @@
     &:after
       content: $domain
       color: white !important
+    img
+      display: none
 
 [data-domain="youtube.com"], [data-domain="www.youtube.com"]
   body
     +white-bg
     +helvetica-light
-  #masthead-nav, #logo-container, #watch-main-container, #watch-headline-user-info, #footer-container, #masthead-search, .headerTinymanName
+  #yt-masthead-container,
+  #footer-hh-container,
+  #guide,
+  #watch7-main-container,
+  #footer-container
     +hide
-  #watch-headline-title
-    font-weight: normal !important
-    text-align: center
-    color: #333 !important
-  #watch-player
-    margin: 0 auto !important
-  #content, #watch-video-container
-    background-image: none !important
-    background-color: transparent !important
-
 
 [data-domain="github.com"], [data-domain="www.github.com"]
   #userbox #user-links #notifications .unread_count
     +hide
 
 [data-domain='facebook.com'], [data-domain="www.facebook.com"]
+  .fbxWelcomeBoxName
+    width: 150px !important
+  #pageNav
+    li:nth-child(2),
+    li:nth-child(3)
+      +hide
+  #blueBar.fixed_elem
+    position: static !important
   body, .uiStreamMessage
     font-size: 14px !important
-  body
-    +white-bg
+  body.webkit
     +helvetica-light
+    background: rgb(235,235,235) !important
+  #rightCol
+    display: none
+
+  div[role=article]
+    background-color: #FFF
+    border-radius: 3px
+    border: 1px solid #C0C0C0
+    box-shadow: 0 0 3px rgba(200, 200, 200, 0.8)
+    &:hover
+      border: 1px solid rgb(29, 52, 113)
+      box-shadow: 0 0 5px rgba(29, 52, 113, 0.4)
+    h5.uiStreamHeadline
+      color: #AAA !important
+      font-weight: bold
+      padding: 5px 10px !important
+      a
+        color: #AAA !important
+        font-weight: bold
+    .uiStreamAttachments
+      margin: 8px !important
+    form
+      .uiStreamFooter
+        display: block
+        border-top: 1px solid rgb(226,226,226)
+        padding: 3px
+        text-align: right
+        font-size: 12px
+        color: #AAA
+    .UFIRow
+      border-top: 1px solid rgb(226, 226, 226)
+      background-color: transparent !important
+
+    .UFIAddComment
+      display: none
+    .uiUfi.UFIContainer
+      margin: 0 !important
+      padding: 0 !important
+      width: auto !important
+    .messageBody
+      display: block
+      width: auto !important
+      padding: 5px 10px !important
+    .UFIArrow
+      display: none
+
+
+  .profilePic
+    border-radius: 3px
+    border: 1px solid #BBB !important
+    box-shadow: 0 0 3px rgba(200, 200, 200, 0.8) !important
+
+  .UIActionLinks.UIActionLinks_bottom, #pagelet_friends_online
+    +hide
   #blueBar
     +no-border
     -webkit-box-shadow: none !important
@@ -70,6 +127,7 @@
     +hide
   #contentCol, #mainContainer
     +no-border
+    background: rgb(235,235,235) !important
   .uiStreamMessage .actorName, .uiStreamMessage .passiveName
     +text-color
     font-size: 14px !important
@@ -78,15 +136,30 @@
     +text-color
   .storyContent
     margin: 20px 0 !important
+  .UFIComment
+    background-color: transparent !important
+  a[title="Like this comment"],
+  label[title="Leave a comment"],
+  a[title="Like this item"]
+    +hide
 
 +hide-links("kickstarter.com")
++hide-links("reddit.com/r/aww")
++hide-links("reddit.com/r/atheism")
++hide-links("qkme.me")
++hide-links("quickmeme.com")
++hide-links("livememe.com")
 
 [data-domain="elnuevodia.com"], [data-domain="www.elnuevodia.com"]
   background-image: none !important
   body
     margin: 30px 0 !important
     background-image: none !important
-  .contendorIconosCompartir, .headersInteriores, .bottomContenidoInteriores.fl, #bloqueComentarios, #sector2Der, #columna1, #footer, #header, #sectorBreadcrumbHeader, #top, .contenedorZonaAviso, #columna3, #footerBottom, .contenedorZonaDeportes, .contenedorZonaElTiempo
+  .headersInteriores, .bottomContenidoInteriores.fl, #bloqueComentarios, #sector2Der, #columna1, #footer, #header, #sectorBreadcrumbHeader, #top, .contenedorZonaAviso, #columna3, #footerBottom, .contenedorZonaDeportes, .contenedorZonaElTiempo
+    +hide
+  .contendorIconosCompartir,
+  .contenedorBanner468x60,
+  #contenedorTabsHoroscopos
     +hide
 
   #textoNoticia
@@ -99,7 +172,52 @@
     width: auto !important
 
 [data-domain="twitter.com"], [data-domain="www.twitter.com"]
-  [data-component-term="user_recommendations"],
-  [data-component-term="trends"],
-  [data-component-term="footer"]
+  .user-style-cohitre
+    .dashboard,
+    .content-header
+      +hide
+
+[data-domain="boingboing.net"], [data-domain="www.boingboing.net"]
+  #navigation,
+  .adblock,
+  #sidebarPinPoint,
+  #sidebarsticky,
+  #comments-container
     +hide
+  .post-content,
+  .headlineBox
+    margin: 0 !important
+  #mainbar
+    +georgia
+    margin: 0 auto !important
+    width: 600px !important
+    p
+      font-size: 16px !important
+      line-height: 24px !important
+
+  #container
+    margin: 0 auto !important
+    width: 600px !important
+  body
+    background-color: transparent !important
+    background-image: none !important
+
+[data-domain="en.wikipedia.org"]
+  #mw-page-base,
+  #mw-head,
+  #footer,
+  #mw-panel,
+  #mw-articlefeedback,
+  #siteNotice
+    +hide
+
+  #content
+    +georgia
+    background-color: transparent !important
+    background-image: none !important
+    border-left: 0 none black !important
+    margin: 0 auto !important
+    width: 600px !important
+    p
+      font-size: 16px !important
+      line-height: 24px !important
